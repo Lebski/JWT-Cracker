@@ -20,12 +20,12 @@ def read_file(filename):
     return token
 
 def try_passwords(encoded_Data):
-    with open("pwfile.txt") as infile:
+    with open("pw_longlist.txt") as infile:
         for line in infile:
             key = line.rstrip()
             try:
                 solution = jwt.decode(encoded_Data, key, algorithm='HS256')
-                print ("Found solution!!!")
+                print ("Found solution!!! --> {} <--".format(key))
                 return(solution) # In doubt use algorithm='RS256'
             except jwt.exceptions.InvalidSignatureError:
                 print ("{} not valid".format(key))
@@ -34,7 +34,6 @@ def try_passwords(encoded_Data):
 
 
 if __name__ == '__main__':
-    encoded = jwt.encode({'some': 'payload'}, 'badumts', algorithm='HS256')
     token = read_file("tokenized.txt")
 
     #Encode Data
@@ -42,6 +41,7 @@ if __name__ == '__main__':
     #encoded_Data = encode_Data(data, 'secret')
     #decoded_Data = decode_Data(token, 'secret')
 
+    #Crack Data
     token = token.rstrip()
     token = token.encode()
     print ("Token gets encoded: {}\n".format(token))
