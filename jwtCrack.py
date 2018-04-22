@@ -28,6 +28,7 @@ def try_passwords(encoded_Data):
                 print ("Found solution!!! --> {} <--".format(key))
                 return(solution) # In doubt use algorithm='RS256'
             except jwt.exceptions.InvalidSignatureError:
+                #Disable this output for a faster run
                 print ("{} not valid".format(key))
                 continue
 

@@ -2,16 +2,18 @@
 Cracks JWT Tokens 
 
 ```
-python3 jwtexp.py
+python3 jwtCrack.py
 ```
 
-o tokenized.txt
--> the jwt-encoded token with signature
+o crack_this_token.txt
+-> the jwt-encoded token with signature. Insert your token HERE.
 
-o pwfile.txt
--> brute-force pw file
+o pw_longlist.txt
+-> put your very personal pw-file in here ;)
 
-o jwt.txt 
--> file frow which the token got created (not used in actual python script)
+o demo_jwt.txt 
+-> one valid demo token, uncomment the "Encode Data"-Section in the python-script
+
+Pro tip: Disable the output in line 32 for a faster run
 
 # Sorry for the confusing filenames!
