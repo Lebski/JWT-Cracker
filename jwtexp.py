@@ -34,10 +34,10 @@ def try_passwords(encoded_Data):
 
 
 if __name__ == '__main__':
-    token = read_file("tokenized.txt")
+    token = read_file("crack_this_token.txt")
 
     #Encode Data
-    #data = json.load(open("jwt.txt"))
+    #data = json.load(open("demo_jwt.txt"))
     #encoded_Data = encode_Data(data, 'secret')
     #decoded_Data = decode_Data(token, 'secret')
 
